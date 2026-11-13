@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nama Anda | Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=Mr+Dafoe&display=swap">
+<style>
+:root{--bg:#F4F1E8;--ink:#17120C;--mu:#6B655A;--ac:#FFA70B;--card:#FFFFFF;--ln:#E4DFD2;--dk:#17120C;--dt:#F4F1E8;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14110C;--ink:#F4F1E8;--mu:#A39C8E;--card:#1F1A13;--ln:#2D261C;--dk:#0A0805;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14110C;--ink:#F4F1E8;--mu:#A39C8E;--card:#1F1A13;--ln:#2D261C;--dk:#0A0805;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:Syne,system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.ac{color:var(--ac)}
+header{position:fixed;top:0;left:0;right:0;z-index:20;padding:calc(env(safe-area-inset-top,0px) + 14px) 16px 0}
+.nav{max-width:1100px;margin:0 auto;background:var(--dk);color:var(--dt);border-radius:99px;display:flex;align-items:center;gap:22px;padding:8px 8px 8px 12px;box-shadow:0 8px 30px rgba(0,0,0,.15)}
+.logo{display:flex;align-items:center;gap:10px;font-family:Syne;font-weight:700}
+.logo i{width:34px;height:34px;border-radius:50%;background:var(--ac);color:var(--dk);display:grid;place-items:center;font-style:normal;font-weight:800}
+.nav nav{display:flex;gap:22px;margin:0 auto;font-size:13px}
+.nav nav a{opacity:.75;transition:opacity .2s,color .2s}.nav nav a:hover{opacity:1;color:var(--ac)}
+.tg{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:none;color:var(--dt);cursor:pointer;font-size:16px}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:99px;padding:11px 20px;font-weight:600;font-size:14px;cursor:pointer;border:2px solid var(--dk);transition:transform .25s}
+.btn:hover{transform:translateY(-3px)}
+.btn b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--dk);color:var(--ac);font-size:13px;transition:transform .25s}
+.btn:hover b{transform:translateX(4px)}
+.b1{background:var(--ac);color:#17120C}.b2{background:var(--bg);color:var(--ink);border-color:var(--ink)}.b2 b{background:var(--ink);color:var(--bg)}
+.nav .btn{background:var(--dt);color:var(--dk);border:0;padding:10px 18px}
+.hero{padding:120px 0 0;text-align:center;position:relative;overflow:hidden}
+.pill{display:inline-flex;gap:8px;align-items:center;background:var(--card);border:1px solid var(--ln);border-radius:99px;padding:6px 14px;font-size:12px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--ac)}
+.hero h1{font-size:clamp(2.3rem,6.4vw,4.4rem);font-weight:800;letter-spacing:-.02em;margin:18px 0 8px}
+.mu{color:var(--mu)}
+.stage{position:relative;height:430px;max-width:900px;margin:26px auto 0}
+.photo{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:300px;height:410px;border-radius:150px 150px 0 0;background:linear-gradient(165deg,var(--ac),#FFD27A);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#17120C;font-family:Syne;font-weight:800;font-size:5rem;line-height:1}
+.photo small{font:500 12px "Plus Jakarta Sans";margin-top:10px;opacity:.7}
+.btns{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:10px;z-index:2;white-space:nowrap}
+.sl,.sr{position:absolute;font-size:13px;text-align:left}
+.sl{left:0;top:120px}.sr{right:0;top:90px;text-align:right;max-width:190px}
+.soc{display:flex;gap:8px;margin-top:8px}
+.soc a{width:30px;height:30px;border-radius:50%;border:1px solid var(--ln);display:grid;place-items:center;font-size:11px;font-weight:600;transition:background .2s,color .2s}
+.soc a:hover{background:var(--ac);color:#17120C;border-color:var(--ac)}
+.chip{position:absolute;padding:6px 14px;border-radius:99px;font-size:12px;font-weight:600;animation:fl 5s ease-in-out infinite}
+.c1{right:0;top:215px;background:var(--dk);color:var(--dt)}.c2{right:30px;top:260px;background:var(--ac);color:#17120C;animation-delay:-1.5s}.c3{left:20px;top:290px;background:var(--dk);color:var(--dt);animation-delay:-3s}
+@keyframes fl{50%{transform:translateY(-10px)}}
+.seal{position:absolute;right:6%;top:-30px;width:104px;height:104px;animation:sp 14s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.mq{background:var(--dk);color:var(--dt);border-bottom:3px solid var(--ac);overflow:hidden;white-space:nowrap;padding:18px 0}
+.mq div{display:inline-flex;gap:36px;animation:mq 24s linear infinite}
+.mq span{font-family:Syne;font-weight:700;font-size:1.3rem}.mq i{color:var(--ac);font-style:normal}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:84px 0}
+.lbl{display:inline-flex;align-items:center;gap:8px;font-size:13px;margin-bottom:12px}
+.lbl i{width:14px;height:14px;border-radius:50%;background:var(--ink)}.lbl i+i{background:var(--ac);margin-left:-10px}
+h2{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;letter-spacing:-.01em}
+.sv{display:grid;gap:10px;margin-top:30px}
+.it{background:var(--card);border:1px solid var(--ln);border-radius:18px;transition:background .3s,color .3s}
+.it.open{background:var(--dk);color:var(--dt);border-color:var(--dk)}
+.hd{display:flex;align-items:center;gap:18px;width:100%;padding:20px 24px;background:none;border:0;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.hd small{color:var(--mu);width:24px}.hd h3{flex:1;font-size:1.15rem}
+.arr{width:32px;height:32px;border-radius:50%;background:var(--ac);color:#17120C;display:grid;place-items:center;transition:transform .35s}
+.it.open .arr{transform:rotate(45deg)}
+.bd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s}
+.it.open .bd{grid-template-rows:1fr}
+.bd>div{overflow:hidden;padding:0 24px 0 66px;font-size:14px;opacity:.9}
+.it.open .bd>div{padding-bottom:22px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.tags span{border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:3px 12px;font-size:12px}
+.dk{background:var(--dk);color:var(--dt);border-top:3px solid var(--ac)}
+.ab{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:center}
+.card-o{background:var(--ac);color:#17120C;border-radius:22px;aspect-ratio:4/4.4;display:grid;place-items:center;font-family:Syne;font-weight:800;font-size:5rem;transition:transform .4s}
+.card-o:hover{transform:rotate(-2deg) scale(1.02)}
+.dk p{opacity:.8;max-width:520px}
+.sig{font-family:"Mr Dafoe",cursive;font-size:1.8rem;margin-left:14px;vertical-align:middle}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:30px}
+.pj{background:var(--card);border:1px solid var(--ln);border-radius:18px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.pj:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,.14)}
+.th{aspect-ratio:4/3;display:grid;place-items:center;font-family:Syne;font-weight:800;font-size:2.2rem;color:#17120C;transition:transform .5s}
+.pj:hover .th{transform:scale(1.06)}.pj .im{overflow:hidden}
+.pj div.t{padding:14px 18px}.pj h3{font-size:1rem}.pj p{margin:2px 0 0;font-size:12.5px;color:var(--mu)}
+.ct{text-align:center}
+.cv{position:relative;padding-top:56.25%;border-radius:18px;overflow:hidden;border:1px solid var(--ln);margin:26px 0 18px;background:var(--card)}
+.cv iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ct h2{font-size:clamp(2rem,6vw,3.8rem)}
+.ct .btn{margin-top:26px;background:var(--ac);color:#17120C;border-color:var(--ac)}
+footer{background:var(--dk);color:var(--mu);text-align:center;padding:22px;font-size:12.5px;border-top:1px solid #2a2418}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){.sl,.sr,.c3{display:none}.ab{grid-template-columns:1fr}.card-o{max-width:280px}}
+@media(max-width:700px){.nav nav{display:none}.nav{justify-content:space-between}.seal{width:80px;height:80px;right:2%}.stage{height:400px}.photo{width:250px;height:360px}.c1{right:-6px}.c2{right:6px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+</style></head>
+<body>
+<header><div class="nav">
+<a class="logo" href="#top"><i>N</i>Nama.</a>
+<nav><a href="#top">Home</a><a href="#services">Services</a><a href="#work">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<button class="tg" id="tg" aria-label="Tukar tema">☾</button>
+<a class="btn" href="#contact">Let’s Talk</a>
+</div></header>
+
+<main id="top">
+<section class="hero" style="padding-bottom:0">
+<div class="wrap">
+<span class="pill rv"><i></i>Marketing Professional</span>
+<h1 class="rv" style="--d:.1s">I’m <span class="ac">Nama Anda</span></h1>
+<p class="mu rv" style="--d:.2s;margin:0">Marketing Executive based in Malaysia</p>
+<div class="stage rv" style="--d:.3s">
+<svg class="seal" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="58" fill="#17120C"/><circle cx="60" cy="60" r="26" fill="#FFA70B"/><path id="cp" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0" fill="none"/><text font-family="Syne" font-weight="700" font-size="11" fill="#FFA70B" letter-spacing="2"><textPath href="#cp">HIRE ME • HIRE ME • HIRE ME • HIRE ME •</textPath></text><path d="M52 60h16M62 54l6 6-6 6" stroke="#17120C" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="sl"><span class="mu">Follow me on</span><div class="soc"><a href="#">in</a><a href="#">Be</a><a href="#">Ig</a></div></div>
+<div class="sr"><span class="ac">“</span> Results-driven marketer with a creative eye for campaigns and detail.</div>
+<span class="chip c1">Campaigns</span><span class="chip c2">Lead Generation</span><span class="chip c3">Canva Design</span>
+<div class="photo">NA<small>Your photo here</small></div>
+<div class="btns"><a class="btn b1" href="#work">Portfolio <b>→</b></a><a class="btn b2" href="#contact">Hire Me</a></div>
+</div>
+</div>
+</section>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="services"><div class="wrap">
+<span class="lbl rv"><i></i><i></i>What I Do</span>
+<h2 class="rv" style="--d:.1s">How I Bring <span class="ac">Ideas to Life</span></h2>
+<div class="sv" id="sv"></div>
+</div></section>
+
+<section class="dk" id="about"><div class="wrap ab">
+<div class="card-o rv">NA</div>
+<div class="rv" style="--d:.15s">
+<span class="lbl"><i></i><i></i>About Me</span>
+<h2>Who is <span class="ac">Nama Anda</span>?</h2>
+<p style="margin:16px 0 22px">Write two or three sentences about yourself here: your background, what you are passionate about in marketing, and the kind of team you want to join.</p>
+<a class="btn b1" href="#">Download CV <b>↓</b></a><span class="sig">Nama Anda</span>
+</div>
+</div></section>
+
+<section id="work"><div class="wrap">
+<span class="lbl rv"><i></i><i></i>Selected Work</span>
+<h2 class="rv" style="--d:.1s">Projects I’m <span class="ac">Proud Of</span></h2>
+<div class="grid" id="pj"></div>
+</div></section>
+
+<section id="canva" style="padding-top:0"><div class="wrap">
+<span class="lbl rv"><i></i><i></i>Full Portfolio</span>
+<h2 class="rv">Browse the <span class="ac">complete deck</span></h2>
+<div class="cv rv"><iframe id="cf" title="Portfolio on Canva" loading="lazy" allowfullscreen></iframe></div>
+<a class="btn b1" id="ca" target="_blank" rel="noopener">Open on Canva <b>↗</b></a>
+</div></section>
+
+<section class="dk ct" id="contact"><div class="wrap rv">
+<span class="lbl"><i></i><i></i>Contact</span>
+<h2>Let’s work <span class="ac">together</span></h2>
+<p style="margin:14px auto 0">Open to new opportunities. Say hello and let’s talk.</p>
+<a class="btn" href="mailto:emel@contoh.com">emel@contoh.com <b>→</b></a>
+</div></section>
+</main>
+<footer>© <span id="yr"></span> Nama Anda. All rights reserved.</footer>
+
+<script>
+const S=[["Digital Marketing",["Campaign Planning","Paid Ads","Email Marketing"],"Planning and running campaigns that bring in the right audience and measurable results."],
+["Content & Social Media",["Content Calendar","Copywriting","Community"],"Creating consistent, on-brand content that builds an engaged following."],
+["Graphic Design",["Canva","Brand Materials","Social Posts"],"Designing clean visuals, banners and promotional material that look professional."],
+["Lead Generation",["Lead Tracking","Follow-Up","CRM"],"Capturing and nurturing leads, and keeping the pipeline organised and visible."],
+["Reporting & Analytics",["Dashboards","Sales Forecast","Insights"],"Turning marketing data into simple dashboards that help the team decide faster."]];
+const P=[["Project One","Campaign","#FFA70B"],["Project Two","Branding","#F4D58D"],["Project Three","Social Media","#FFC857"],["Project Four","Print Design","#E9B44C"]];
+/* ===== EDIT DI SINI SAHAJA: tukar teks dalam tanda petik "..." ===== */
+const SITE={
+ name:"Nama Anda",
+ initials:"NA",
+ role:"Marketing Executive",
+ location:"Malaysia",
+ badge:"Marketing Professional",
+ quote:"Results-driven marketer with a creative eye for campaigns and detail.",
+ about:"Write two or three sentences about yourself here: your background, what you are passionate about in marketing, and the kind of team you want to join.",
+ email:"emel@contoh.com",
+ cv:"#", /* pautan atau nama fail CV, contoh: "cv.pdf" */
+ photo:"", /* nama fail gambar profil, contoh: "photo.jpg" */
+ linkedin:"#", behance:"#", instagram:"#",
+ canva:"https://www.canva.com/design/DAF9kddaZ_E/I8aZjRGSjbr0m6jiUOgJvQ/view", /* kosongkan "" untuk buang bahagian Canva */
+ chips:["Campaigns","Lead Generation","Canva Design"],
+ marquee:["Digital Marketing","Campaigns","Content","Lead Generation","Canva Design","Reporting"],
+ services:[ /* [tajuk, [tag], penerangan] */
+  ["Digital Marketing",["Campaign Planning","Paid Ads","Email Marketing"],"Planning and running campaigns that bring in the right audience and measurable results."],
+  ["Content & Social Media",["Content Calendar","Copywriting","Community"],"Creating consistent, on-brand content that builds an engaged following."],
+  ["Graphic Design",["Canva","Brand Materials","Social Posts"],"Designing clean visuals, banners and promotional material that look professional."],
+  ["Lead Generation",["Lead Tracking","Follow-Up","CRM"],"Capturing and nurturing leads, and keeping the pipeline organised and visible."],
+  ["Reporting & Analytics",["Dashboards","Sales Forecast","Insights"],"Turning marketing data into simple dashboards that help the team decide faster."]
+ ],
+ projects:[ /* image: nama fail gambar (kosong = warna), link: pautan projek */
+  {title:"Project One",cat:"Campaign",color:"#FFA70B",image:"",link:"#"},
+  {title:"Project Two",cat:"Branding",color:"#F4D58D",image:"",link:"#"},
+  {title:"Project Three",cat:"Social Media",color:"#FFC857",image:"",link:"#"},
+  {title:"Project Four",cat:"Print Design",color:"#E9B44C",image:"",link:"#"}
+ ]
+};
+/* ===== TAMAT BAHAGIAN EDIT ===== */
+const $q=s=>document.querySelector(s),$a=s=>document.querySelectorAll(s);
+document.title=SITE.name+" | Portfolio";
+{const l=$q(".logo"),i=document.createElement("i");i.textContent=SITE.initials[0];l.textContent="";l.append(i,SITE.name.split(" ")[0]+".")}
+$q(".pill").lastChild.textContent=SITE.badge;
+$q(".hero h1 .ac").textContent=SITE.name;
+$q(".hero .mu").textContent=SITE.role+" based in "+SITE.location;
+$q(".sr").lastChild.textContent=" "+SITE.quote;
+$a(".chip").forEach((c,i)=>c.textContent=SITE.chips[i]||"");
+if(SITE.photo){[".photo",".card-o"].forEach(s=>{const e=$q(s);e.textContent="";e.style.background="url('"+SITE.photo+"') center/cover"})}else{$q(".photo").firstChild.textContent=SITE.initials;$q(".card-o").textContent=SITE.initials}
+[SITE.linkedin,SITE.behance,SITE.instagram].forEach((h,i)=>{const a=$a(".soc a")[i];a.href=h;a.target="_blank";a.rel="noopener"});
+$q(".ab h2 .ac").textContent=SITE.name;$q(".ab p").textContent=SITE.about;$q(".ab .btn").href=SITE.cv;$q(".sig").textContent=SITE.name;
+$q("#contact .btn").href="mailto:"+SITE.email;$q("#contact .btn").firstChild.textContent=SITE.email+" ";
+$q("footer").lastChild.textContent=" "+SITE.name+". All rights reserved.";
+if(SITE.canva){$q("#cf").src=SITE.canva+"?embed";$q("#ca").href=SITE.canva}else $q("#canva").remove();
+S.length=0;SITE.services.forEach(x=>S.push(x));P.length=0;SITE.projects.forEach(p=>P.push([p.title,p.cat,p.color,p.image,p.link]));
+const sv=document.getElementById("sv");
+S.forEach(([t,tags,d],i)=>{
+  const it=document.createElement("div");it.className="it rv"+(i===1?" open":"");it.style.setProperty("--d",(i*.07)+"s");
+  it.innerHTML='<button class="hd"><small>0'+(i+1)+'</small><h3></h3><span class="arr">↗</span></button><div class="bd"><div><div class="tags"></div><p style="margin:0"></p></div></div>';
+  it.querySelector("h3").textContent=t;it.querySelector("p").textContent=d;
+  tags.forEach(x=>{const s=document.createElement("span");s.textContent=x;it.querySelector(".tags").append(s)});
+  it.querySelector(".hd").onclick=()=>{const o=it.classList.contains("open");sv.querySelectorAll(".it").forEach(e=>e.classList.remove("open"));if(!o)it.classList.add("open")};
+  sv.append(it);
+});
+const pj=document.getElementById("pj");
+P.forEach(([t,c,col,img,lk],i)=>{
+  const a=document.createElement("a");a.className="pj rv";a.href=lk||"#";a.style.setProperty("--d",(i*.08)+"s");
+  a.innerHTML='<div class="im"><div class="th" style="background:'+col+'">0'+(i+1)+'</div></div><div class="t"><h3></h3><p></p></div>';
+  if(img){const m=document.createElement("img");m.src=img;m.alt=t;m.className="th";m.style.cssText="width:100%;object-fit:cover;display:block";a.querySelector(".th").replaceWith(m)}a.querySelector("h3").textContent=t;a.querySelector("p").textContent=c;pj.append(a);
+});
+const w=SITE.marquee;
+const one=w.map(x=>"<span>"+x+"</span><i>✦</i>").join("");
+document.getElementById("mq").innerHTML=one+one+one+one;
+document.getElementById("yr").textContent=new Date().getFullYear();
+const tg=document.getElementById("tg"),root=document.documentElement;
+const dark=()=>root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;
+const sync=()=>{tg.textContent=dark()?"☀":"☾"};
+try{const t=localStorage.getItem("pt");if(t)root.dataset.theme=t}catch(e){}
+sync();
+tg.onclick=()=>{const n=dark()?"light":"dark";root.dataset.theme=n;try{localStorage.setItem("pt",n)}catch(e){}sync()};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(e=>io.observe(e));
+</script>
+</body></html>
