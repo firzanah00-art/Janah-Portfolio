@@ -91,12 +91,21 @@ footer{background:var(--dk);color:var(--mu);text-align:center;padding:22px;font-
 @media(max-width:900px){.sl,.sr,.c3{display:none}.ab{grid-template-columns:1fr}.card-o{max-width:280px}}
 @media(max-width:700px){.nav nav{display:none}.nav{justify-content:space-between}.seal{width:80px;height:80px;right:2%}.stage{height:400px}.photo{width:250px;height:360px}.c1{right:-6px}.c2{right:6px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+.fl2{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.ch{border:1px solid var(--ln);background:var(--card);color:var(--ink);border-radius:99px;padding:7px 16px;font:500 13px "Plus Jakarta Sans",system-ui,sans-serif;cursor:pointer;transition:background .2s,color .2s}
+.ch.on,.ch:hover{background:var(--ac);border-color:var(--ac);color:#17120C}
+.pj{animation:pop .45s both}@keyframes pop{from{opacity:0;transform:translateY(14px)}}
+.bg{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.bgc{background:var(--card);border:1px solid var(--ln);border-radius:18px;padding:22px;transition:transform .3s}
+.bgc:hover{transform:translateY(-6px)}.bgc small{color:var(--ac);font-weight:600}.bgc h3{margin:6px 0 4px;font-size:1.05rem}.bgc p{margin:0;font-size:13.5px;color:var(--mu)}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.88);display:grid;place-items:center;padding:20px;cursor:zoom-out}
+#lb[hidden]{display:none}#lb img{max-width:100%;max-height:100%;border-radius:10px}
 :focus-visible{outline:2px solid var(--ac);outline-offset:3px}
 </style></head>
 <body>
 <header><div class="nav">
 <a class="logo" href="#top"><i>N</i>Nama.</a>
-<nav><a href="#top">Home</a><a href="#services">Services</a><a href="#work">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<nav><a href="#top">Home</a><a href="#services">Expertise</a><a href="#work">Projects</a><a href="#about">About</a><a href="#background">Background</a><a href="#contact">Contact</a></nav>
 <button class="tg" id="tg" aria-label="Tukar tema">☾</button>
 <a class="btn" href="#contact">Let’s Talk</a>
 </div></header>
@@ -136,9 +145,16 @@ footer{background:var(--dk);color:var(--mu);text-align:center;padding:22px;font-
 </div>
 </div></section>
 
+<section id="background"><div class="wrap">
+<span class="lbl rv"><i></i><i></i>Background</span>
+<h2 class="rv">Where I’ve <span class="ac">Learned &amp; Worked</span></h2>
+<div class="grid bg" id="bg"></div>
+</div></section>
+
 <section id="work"><div class="wrap">
 <span class="lbl rv"><i></i><i></i>Selected Work</span>
-<h2 class="rv" style="--d:.1s">Projects I’m <span class="ac">Proud Of</span></h2>
+<h2 class="rv" style="--d:.1s">Selected <span class="ac">Works</span></h2>
+<div class="fl2" id="fl"></div>
 <div class="grid" id="pj"></div>
 </div></section>
 
@@ -157,6 +173,7 @@ footer{background:var(--dk);color:var(--mu);text-align:center;padding:22px;font-
 </div></section>
 </main>
 <footer>© <span id="yr"></span> Nama Anda. All rights reserved.</footer>
+<div id="lb" hidden role="dialog" aria-label="Preview"><img alt=""></div>
 
 <script>
 const S=[["Digital Marketing",["Campaign Planning","Paid Ads","Email Marketing"],"Planning and running campaigns that bring in the right audience and measurable results."],
@@ -167,35 +184,49 @@ const S=[["Digital Marketing",["Campaign Planning","Paid Ads","Email Marketing"]
 const P=[["Project One","Campaign","#FFA70B"],["Project Two","Branding","#F4D58D"],["Project Three","Social Media","#FFC857"],["Project Four","Print Design","#E9B44C"]];
 /* ===== EDIT DI SINI SAHAJA: tukar teks dalam tanda petik "..." ===== */
 const SITE={
- name:"Nama Anda",
- initials:"NA",
- role:"Marketing Executive",
+ name:"Firzanah Asri",
+ initials:"FA",
+ role:"Sales Assistant",
  location:"Malaysia",
- badge:"Marketing Professional",
- quote:"Results-driven marketer with a creative eye for campaigns and detail.",
- about:"Write two or three sentences about yourself here: your background, what you are passionate about in marketing, and the kind of team you want to join.",
- email:"emel@contoh.com",
- cv:"#", /* pautan atau nama fail CV, contoh: "cv.pdf" */
- photo:"", /* nama fail gambar profil, contoh: "photo.jpg" */
+ badge:"Sales & Marketing Content",
+ quote:"Design-minded sales assistant who turns products into content that connects with customers.",
+ about:"I work as a sales assistant in the health and beauty field. The job goes beyond closing sales: it is about introducing and promoting products using my knowledge of design and sales, and presenting their value and key features in a way that connects with the end user.",
+ email:"emel@contoh.com", /* GANTI dengan emel sebenar */
+ cv:"#", /* nama fail atau pautan resume */
+ photo:"img/photo.webp",
  linkedin:"#", behance:"#", instagram:"#",
- canva:"https://www.canva.com/design/DAF9kddaZ_E/I8aZjRGSjbr0m6jiUOgJvQ/view", /* kosongkan "" untuk buang bahagian Canva */
- chips:["Campaigns","Lead Generation","Canva Design"],
- marquee:["Digital Marketing","Campaigns","Content","Lead Generation","Canva Design","Reporting"],
+ canva:"", /* kosong = tiada bahagian Canva */
+ chips:["Canva","Photoshop","Social Media"],
+ marquee:["Social Media Content","Product Posters","Marketing Content","Photoshop","Canva","Online Shopping Platforms","Documentation"],
  services:[ /* [tajuk, [tag], penerangan] */
-  ["Digital Marketing",["Campaign Planning","Paid Ads","Email Marketing"],"Planning and running campaigns that bring in the right audience and measurable results."],
-  ["Content & Social Media",["Content Calendar","Copywriting","Community"],"Creating consistent, on-brand content that builds an engaged following."],
-  ["Graphic Design",["Canva","Brand Materials","Social Posts"],"Designing clean visuals, banners and promotional material that look professional."],
-  ["Lead Generation",["Lead Tracking","Follow-Up","CRM"],"Capturing and nurturing leads, and keeping the pipeline organised and visible."],
-  ["Reporting & Analytics",["Dashboards","Sales Forecast","Insights"],"Turning marketing data into simple dashboards that help the team decide faster."]
+  ["Social Media Content",["Content Arrangement","Instagram Layouts","Posting"],"Planning and arranging social media content so every post looks consistent and on brand."],
+  ["Marketing Content Development",["Sales Campaigns","Promotions","Seasonal Posters"],"Developing promotional content for sales campaigns and seasonal offers."],
+  ["Product Posters & Graphic Editing",["Photoshop","Canva","Proofing"],"Editing product visuals and proofing designs so they are ready to publish, mainly in digital formats."],
+  ["Online Shopping Platforms",["Product Display","Store Content"],"Managing content and product display on social media and online shopping platforms as part of the daily task."],
+  ["Documentation & Filing",["Documentation","Filing","Organisation"],"Keeping records and documents organised so work is easy to find and follow up."]
  ],
- projects:[ /* image: nama fail gambar (kosong = warna), link: pautan projek */
-  {title:"Project One",cat:"Campaign",color:"#FFA70B",image:"",link:"#"},
-  {title:"Project Two",cat:"Branding",color:"#F4D58D",image:"",link:"#"},
-  {title:"Project Three",cat:"Social Media",color:"#FFC857",image:"",link:"#"},
-  {title:"Project Four",cat:"Print Design",color:"#E9B44C",image:"",link:"#"}
+ background:[ /* [tempat, jawatan, nota] */
+  ["International Islamic University Malaysia, Gombak","Bachelor in Landscape Architecture","2014 – 2020"],
+  ["In-Site Landscape Design Studio, Bangsar","Internship","June – August 2018"],
+  ["D’Qistee Health & Beauty Sdn Bhd","Sales Assistant","First official job as a sales assistant, involved in marketing management."]
+ ],
+ projects:[ /* cat: Sales & Marketing / Freelance / College Work */
+  {title:"End-Year Sales Posters",cat:"Sales & Marketing",color:"#FFA70B",image:"img/p1.jpg",link:"#"},
+  {title:"Deepavali 11.11 Sales Poster",cat:"Sales & Marketing",color:"#F4D58D",image:"img/p2.jpg",link:"#"},
+  {title:"Product Introduction Posters",cat:"Sales & Marketing",color:"#FFC857",image:"img/p3.jpg",link:"#"},
+  {title:"Serum Highlight Poster",cat:"Sales & Marketing",color:"#E9B44C",image:"img/p4.jpg",link:"#"},
+  {title:"Instagram Posting Layout",cat:"Sales & Marketing",color:"#FFA70B",image:"img/p5.jpg",link:"#"},
+  {title:"Short Video Edits",cat:"Sales & Marketing",color:"#F4D58D",image:"img/p6.jpg",link:"#"},
+  {title:"Team Promotion Materials",cat:"Freelance",color:"#FFC857",image:"img/p7.jpg",link:"#"},
+  {title:"Team New Logo Proposal",cat:"Freelance",color:"#E9B44C",image:"img/p8.jpg",link:"#"},
+  {title:"Final Year Project: Fisheries Industrial Tourism",cat:"College Work",color:"#FFA70B",image:"img/p9.jpg",link:"#"},
+  {title:"Magazine Template",cat:"College Work",color:"#F4D58D",image:"img/p10.jpg",link:"#"},
+  {title:"Exhibition Poster",cat:"College Work",color:"#FFC857",image:"img/p11.jpg",link:"#"},
+  {title:"Case Study Poster",cat:"College Work",color:"#E9B44C",image:"img/p12.jpg",link:"#"}
  ]
 };
 /* ===== TAMAT BAHAGIAN EDIT ===== */
+function init(){
 const $q=s=>document.querySelector(s),$a=s=>document.querySelectorAll(s);
 document.title=SITE.name+" | Portfolio";
 {const l=$q(".logo"),i=document.createElement("i");i.textContent=SITE.initials[0];l.textContent="";l.append(i,SITE.name.split(" ")[0]+".")}
@@ -204,7 +235,7 @@ $q(".hero h1 .ac").textContent=SITE.name;
 $q(".hero .mu").textContent=SITE.role+" based in "+SITE.location;
 $q(".sr").lastChild.textContent=" "+SITE.quote;
 $a(".chip").forEach((c,i)=>c.textContent=SITE.chips[i]||"");
-if(SITE.photo){[".photo",".card-o"].forEach(s=>{const e=$q(s);e.textContent="";e.style.background="url('"+SITE.photo+"') center/cover"})}else{$q(".photo").firstChild.textContent=SITE.initials;$q(".card-o").textContent=SITE.initials}
+if(SITE.photo){[".photo",".card-o"].forEach((s,k)=>{const e=$q(s);e.textContent="";e.style.background="url('"+SITE.photo+"') center bottom/cover no-repeat,"+(k?"var(--ac)":"linear-gradient(165deg,var(--ac),#FFD27A)")})}else{$q(".photo").firstChild.textContent=SITE.initials;$q(".card-o").textContent=SITE.initials}
 [SITE.linkedin,SITE.behance,SITE.instagram].forEach((h,i)=>{const a=$a(".soc a")[i];a.href=h;a.target="_blank";a.rel="noopener"});
 $q(".ab h2 .ac").textContent=SITE.name;$q(".ab p").textContent=SITE.about;$q(".ab .btn").href=SITE.cv;$q(".sig").textContent=SITE.name;
 $q("#contact .btn").href="mailto:"+SITE.email;$q("#contact .btn").firstChild.textContent=SITE.email+" ";
@@ -220,12 +251,19 @@ S.forEach(([t,tags,d],i)=>{
   it.querySelector(".hd").onclick=()=>{const o=it.classList.contains("open");sv.querySelectorAll(".it").forEach(e=>e.classList.remove("open"));if(!o)it.classList.add("open")};
   sv.append(it);
 });
-const pj=document.getElementById("pj");
-P.forEach(([t,c,col,img,lk],i)=>{
-  const a=document.createElement("a");a.className="pj rv";a.href=lk||"#";a.style.setProperty("--d",(i*.08)+"s");
-  a.innerHTML='<div class="im"><div class="th" style="background:'+col+'">0'+(i+1)+'</div></div><div class="t"><h3></h3><p></p></div>';
-  if(img){const m=document.createElement("img");m.src=img;m.alt=t;m.className="th";m.style.cssText="width:100%;object-fit:cover;display:block";a.querySelector(".th").replaceWith(m)}a.querySelector("h3").textContent=t;a.querySelector("p").textContent=c;pj.append(a);
-});
+const pj=document.getElementById("pj"),fl=document.getElementById("fl"),lb=document.getElementById("lb");
+function show(cat){
+  pj.innerHTML="";
+  P.filter(p=>cat==="All"||p[1]===cat).forEach(([t,c,col,img,lk])=>{
+    const a=document.createElement("a");a.className="pj";a.href=lk||"#";
+    a.innerHTML='<div class="im"><div class="th" style="background:'+col+'">'+t[0]+'</div></div><div class="t"><h3></h3><p></p></div>';
+    if(img){const m=document.createElement("img");m.src=img;m.alt=t;m.loading="lazy";m.className="th";m.style.cssText="width:100%;object-fit:cover;display:block";a.querySelector(".th").replaceWith(m);a.onclick=e=>{e.preventDefault();lb.querySelector("img").src=img;lb.querySelector("img").alt=t;lb.hidden=false}}
+    a.querySelector("h3").textContent=t;a.querySelector("p").textContent=c;pj.append(a);
+  });
+}
+["All",...new Set(P.map(p=>p[1]))].forEach(c=>{const b=document.createElement("button");b.textContent=c;b.className="ch"+(c==="All"?" on":"");b.onclick=()=>{fl.querySelectorAll("button").forEach(x=>x.classList.remove("on"));b.classList.add("on");show(c)};fl.append(b)});
+show("All");lb.onclick=()=>{lb.hidden=true};
+SITE.background.forEach(([t,r,n],i)=>{const d=document.createElement("div");d.className="bgc rv";d.style.setProperty("--d",(i*.1)+"s");d.innerHTML="<small></small><h3></h3><p></p>";d.querySelector("small").textContent=n.length<22?n:"";d.querySelector("h3").textContent=t;d.querySelector("p").textContent=n.length<22?r:r+". "+n;document.getElementById("bg").append(d)});
 const w=SITE.marquee;
 const one=w.map(x=>"<span>"+x+"</span><i>✦</i>").join("");
 document.getElementById("mq").innerHTML=one+one+one+one;
@@ -238,5 +276,7 @@ sync();
 tg.onclick=()=>{const n=dark()?"light":"dark";root.dataset.theme=n;try{localStorage.setItem("pt",n)}catch(e){}sync()};
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll(".rv").forEach(e=>io.observe(e));
+}
+init();
 </script>
 </body></html>
